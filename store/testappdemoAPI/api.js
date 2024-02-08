@@ -11,6 +11,24 @@ function api_docs_schema_retrieve(payload) {
 function api_v1_login_create(payload) {
   return testappdemoAPI.post(`/api/v1/login/`, payload)
 }
+function api_v1_news_list(payload) {
+  return testappdemoAPI.get(`/api/v1/news/`)
+}
+function api_v1_news_create(payload) {
+  return testappdemoAPI.post(`/api/v1/news/`, payload)
+}
+function api_v1_news_retrieve(payload) {
+  return testappdemoAPI.get(`/api/v1/news/${payload.id}/`)
+}
+function api_v1_news_update(payload) {
+  return testappdemoAPI.put(`/api/v1/news/${payload.id}/`, payload)
+}
+function api_v1_news_partial_update(payload) {
+  return testappdemoAPI.patch(`/api/v1/news/${payload.id}/`, payload)
+}
+function api_v1_news_destroy(payload) {
+  return testappdemoAPI.delete(`/api/v1/news/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return testappdemoAPI.post(`/api/v1/signup/`, payload)
 }
@@ -50,6 +68,12 @@ function rest_auth_user_partial_update(payload) {
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
+  api_v1_news_list,
+  api_v1_news_create,
+  api_v1_news_retrieve,
+  api_v1_news_update,
+  api_v1_news_partial_update,
+  api_v1_news_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_create,
